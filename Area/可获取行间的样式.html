@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offset的bug，border</title>
+    <script>
+        function getStyle(obj,name) {
+            if(obj.currentStyle)
+            {
+                return obj.currentStyle[name];
+            }
+            else{
+                return getComputedStyle(obj,false)[name];
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

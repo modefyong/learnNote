@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;
+            list-style: none;}
+        #div1{
+            position: absolute;/*忘记了写绝对定位，盒子不会移动*/
+            width: 50px;
+            height: 200px;
+            background: #ccc;
+            border: 1px solid black;
+            display:none;
+        }
+
+    </style>
+    <script>
+        document.oncontextmenu=function(ev)
+        {
+            var oEvent = ev || event;
+            var oDiv1 = document.getElementById("div1");
+
+          oDiv1.style.display='block';
+          oDiv1.style.left = oEvent.clientX + 'px';//没反应原因：没写绝对定位
+          oDiv1.style.top  = oEvent.clientY + 'px';
+
+          return false;
+        };
+        document.onclick=function () {
+          var oDiv1 = document.getElementById("div1");
+
+          oDiv1.style.display="none";
+        };
+    </script>
+</head>
+<body>
+<div id="div1">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>1</li>
+        <li>1</li>
+
+
+    </ul>
+</div>
+</body>
+</html>

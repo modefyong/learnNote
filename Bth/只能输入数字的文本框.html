@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>只能输入数字的文本框</title>
+    <script>
+        window.onload=function(){
+          var oTxt1 = document.getElementById("text1");
+          oTxt1.onkeydown=function(ev){
+
+              var oEvent = ev || event;
+//              alert(oEvent.keyCode);
+              if(oEvent.keyCode!=8 &&(oEvent.keyCode<48 || oEvent.keyCode>57)){
+                  return false;
+              }
+
+          };
+        };
+    </script>
+</head>
+<body>
+<input id="text1" type="text">
+</body>
+</html>

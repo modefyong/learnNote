@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js运动复习</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<input id="btn1" type="button" value="开始">
+<input id="btn2" type="button" value="暂停">
+    <div id="div1">
+
+    </div>
+</body>
+</html>
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oBtn1 = document.getElementById('btn1');
+    var oBtn2 = document.getElementById('btn2');
+
+    oBtn1.onclick = function () {
+        startMove(400);
+    };
+    oBtn2.onclick = function () {
+        clearInterval(timer);
+    };
+
+    var timer = null;
+    function startMove(iTarget)
+    {
+        var oDiv1 = document.getElementById('div1');
+        clearInterval(timer);
+        timer = setInterval(function ()
+        {
+            var speed = (iTarget-oDiv1.offsetLeft)/10;//缓冲
+
+            speed>0?Math.ceil(speed):Math.floor(speed);//三元运算符，取整
+//            if (oDiv1.offsetLeft <= iTarget) {
+//                speed = 10;
+//            } else {
+//                speed = 1;
+//            }
+
+            oDiv1.style.left = oDiv1.offsetLeft + speed + 'px';
+
+        }, 30);
+
+    }
+
+
+
+
+
+
+
+
+</script>

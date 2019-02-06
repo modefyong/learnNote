@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取消事件冒泡</title>
+    <style>
+        #div1{
+            width: 400px;
+            height:200px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<input id="btn1" type="button" value="点击">
+<div id="div1"></div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var oBtn1 = document.getElementById("btn1");
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.style.display = "none";
+        oBtn1.onclick = function(ev){
+            var oEvent = ev || event;
+          oDiv1.style.display = "block";
+          oEvent.cancelBubble=true;
+        };
+        document.onclick = function () {
+            oDiv1.style.display = "none";
+        };
+    };
+
+
+
+</script>

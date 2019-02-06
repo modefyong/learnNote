@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+        }
+    </style>
+</head>
+<body style="height: 2000px;">
+<div id="div1">
+
+</div>
+</body>
+</html>
+<script>
+
+    document.onmousemove=function (ev) {
+      var oDiv1 = document.getElementById("div1");
+      var oEvent = ev || event;
+
+      var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+      //但凡是用到clientX，clientY时一定要加上scrollLeft，scrollTop
+      oDiv1.style.left = oEvent.clientX + "px";
+      oDiv1.style.top  = oEvent.clientY + scrollTop + "px";
+
+    };
+</script>
