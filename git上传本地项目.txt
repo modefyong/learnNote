@@ -6,7 +6,9 @@ git remote add origin 仓库地址
 5.git fetch(git pull origin master) 拉取远程仓库内容
 6. 将所要上传的本地文件复制到该文件夹，添加 git add .  查看状态：git status
 7.提交到本地仓库 git commit -m "注释"
-8.同步上传到远程仓库  git push --set-upstream origin master
+8.同步上传到远程仓库，还存在问题。可能原因：有两个SSH密钥
+  git push --set-upstream origin master
 --set-upstream？不明白什么意思？
+提交一次后直接git push就可以了。为啥？
 9.git log 查看提交日志。
 10.其他命令后续学习补充……
