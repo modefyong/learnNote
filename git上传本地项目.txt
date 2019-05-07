@@ -1,0 +1,12 @@
+1.先在本地建个空文件夹。
+2.git init 初始化
+3.关联远程仓库：
+git remote add origin 仓库地址
+4.查看关联的远程仓库：git remote -v
+5.git fetch(git pull origin master) 拉取远程仓库内容
+6. 将所要上传的本地文件复制到该文件夹，添加 git add .  查看状态：git status
+7.提交到本地仓库 git commit -m "注释"
+8.同步上传到远程仓库  git push --set-upstream origin master
+--set-upstream？不明白什么意思？
+9.git log 查看提交日志。
+10.其他命令后续学习补充……
