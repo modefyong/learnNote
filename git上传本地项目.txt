@@ -4,6 +4,11 @@
 git remote add origin 仓库地址
 4.查看关联的远程仓库：git remote -v
 5.git fetch(git pull origin master) 拉取远程仓库内容
+
+5.1 在获取之前先git -fetch 刷新一下，再去git branch -a 查看所有分支，再去获取 
+git checkout -b 新建本地分支 origin/远程分支 
+5.2 切换现有分支 git checkout 现有分支名称
+
 6. 将所要上传的本地文件复制到该文件夹，添加 git add .  查看状态：git status
 7.提交到本地仓库 git commit -m "注释"
 8.同步上传到远程仓库，还存在问题。可能原因：有两个SSH密钥
