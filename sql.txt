@@ -1,0 +1,13 @@
+1.创建表 create table t1(id int,name varchar(10));
+2.插入：insert into table1(field1,field2) values(value1,value2)
+3.删除：delete from table1 where 范围
+4.更新：update table1 set field1=value1 where 范围
+5.查找：select * from table1 where field1 like ’%value1%’
+6.多表连接：
+--join
+select * from A a join B b on a.id=b.aid;
+--where
+select * from A a,B b where a.id=b.aid;
+其他：“where 1=1” 是表示选择全部    “where 1=2”全部不选。
+
+
