@@ -1,0 +1,21 @@
+mui基础知识：
+一、DOM结构
+注意点：
+1.固定栏（带.mui-bar）都要放在.mui-content之前。原因：fixed布局
+2.一切内容都要包裹在mui-content中
+3.始终为button按钮添加type按钮。原因：默认类型submit
+二、窗口管理
+1.页面初始化：必须执行mui.init方法
+mui在页面初始化时，初始化了很多参数配置，比如：按键监听、手势监听等，因此mui页面都必须调用一次mui.init()方法；
+2.页面跳转：抛弃href跳转
+3.页面关闭：勿重复监听backbutton
+三、手势操作
+1.点击：忘记click，mui为了解决延迟，封装了tap事件
+四、webview
+为解决HTML5在低端Android机上的性能缺陷，mui引入了原生加速，其中最关键的就是webview控件
+五、mui页面间传值
+页面初始化时，通过扩展参数传值
+vue过渡动画注意点：
+1.循环列表要实现动画效果，必须由transition-group包裹
+2.在transition-group起始标签内添加 appear属性，可以实现页面刚显示出来的入场效果。
+3.transition-group默认渲染为span标签，在transition-group起始标签内添加 tag，可以将transition-group渲染为其他标签。

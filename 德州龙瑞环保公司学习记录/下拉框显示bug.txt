@@ -1,0 +1,15 @@
+问题：医废入库，选择一个科室查询后，再选择全部科室查询，下拉框显示错误
+解决： 
+/~DEPARTMENT_ID!=null && DEPARTMENT_ID!==0:  and t2.DEPARTMENT_ID = {DEPARTMENT_ID} ~/ 
+
+修改headerKey="0"
+<s:select list="%{#request.hospitalDepartmentDtoList}"
+							name="DEPARTMENT_ID" value="%{#session.departmentId}"
+							listKey="id" listValue="departmentName" headerKey="0"
+							headerValue="科室名称" id="departmentId" theme="simple"></s:select>
+
+if (CheckUtils.isEmpty(departmentIdString) || Integer.valueOf(departmentIdString).equals(0)) {
+			hospitalDepartmentDtoList = allDepartmentLIst;
+		}
+
+Integer.valueOf(departmentIdString) 将String类型转换成int类型
