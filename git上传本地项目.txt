@@ -1,19 +1,20 @@
-1.先在本地建个空文件夹。
+1.先在本地建个空文件夹
 2.git init 初始化
 3.关联远程仓库：
 git remote add origin 仓库地址
 4.查看关联的远程仓库：git remote -v
-5.git fetch(git pull origin master) 拉取远程仓库内容（必须！）注：git fetch命令用于从另一个存储库下载对象和引用。
+5.git fetch(git pull origin master) 拉取远程仓库内容（必须！）注：git fetch命令用于从另一个存储库下载对象和引用
+git fetch origin 远程分支名称       从远程仓库下载引用到本地
+git checkout 远程分支名称           切换到远程分支引用
 
-5.1 在获取之前先git -fetch 刷新一下，再去git branch -a 查看所有分支，再去获取 
-git checkout -b 新建本地分支 origin/远程分支 
+5.1 在获取之前先git -fetch 刷新一下，再去git branch -a 查看所有分支
 5.2 切换现有分支 git checkout 现有分支名称
 
 6. 将所要上传的本地文件复制到该文件夹，添加 git add .  查看状态：git status
-7.提交到本地仓库 git commit -m "注释"
+7.提交到本地仓库 git commit -m "注释"，git push origin 远程分支名，推送到远程仓库
 8.同步上传到远程仓库，还存在问题。可能原因：有两个SSH密钥
   git push --set-upstream origin master
 --set-upstream？不明白什么意思？
-提交一次后直接git push就可以了。为啥？
+提交一次后直接git push就可以了。因为现在已经与远程仓库分支建立关联，若要修改，须使用其他命令。
 9.git log 查看提交日志。
 10.其他命令后续学习补充……
