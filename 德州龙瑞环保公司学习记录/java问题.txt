@@ -1,8 +1,0 @@
-跟着视频学习Struts2框架，手敲代码遇到的问题：
-1.struts-2.5.20 版本问题，
-错误日志：java.lang.ClassNotFoundException: org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
-解决：上网查询了struts2.5的新特性，终于发现了问题所在，在2.5以上的版本，语句org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter再次发生了变化，其中.ng的部分被去掉了，在eclipse中编辑该语句去掉.ng，变为org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter，成功启动服务器。
-2.页面跳转失败，
-rong method was defined as an action method: index
-在网上查找原因：struts2-rest-plugin-2.3.24.jar 这个包中的：struts-plugin.xml，导致了Restful2ActionMapper的调用。
-解决：删除struts2-rest-plugin-xxx.jar。
