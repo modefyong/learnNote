@@ -1,0 +1,28 @@
+struts.xml:
+	<!-- 权限控制拦截器  begin -->
+	<package name="authorityForMobile" extends="json-default">
+		<interceptors>
+				<interceptor class="cn.com.longrui.mwms.interceptor.MobileAuthorizationInterceptor" name="mobileAuthority" />
+				<interceptor class="cn.com.longrui.mwms.interceptor.CORSInterceptor" name="corsInterceptor" />
+				<!-- <interceptor class="cn.com.longrui.mwms.interceptor.ExceptionProcessInterceptor" name="exceptionProcess" />
+				<interceptor class="cn.com.longrui.mwms.interceptor.SubmitByPostInterceptor" name="doPost" /> -->
+				<interceptor-stack name="defaultMobileAuthority">
+					<interceptor-ref name="mobileAuthority" />
+					<interceptor-ref name="corsInterceptor" />
+					<interceptor-ref name="jsonValidationWorkflowStack" />
+				</interceptor-stack>
+				<interceptor-stack name="corsJsonStack">
+					<interceptor-ref name="corsInterceptor" />
+					<interceptor-ref name="jsonValidationWorkflowStack" />
+				</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="defaultMobileAuthority" />
+
+子struts文件中：
+<!-- 查询暂存库中医疗废物汇总信息 -->
+		<action name="deleteUploadWaste_*" class="cn.com.longrui.mwms.action.mobile.HospitalMedicalCollectorManagerAction" method="deleteHospialPreCollect_{1}">
+			<result name="success" type="json">
+				<param name="root">resultMap</param>
+			</result>
+			<interceptor-ref name="corsJsonStack" />
+		</action>

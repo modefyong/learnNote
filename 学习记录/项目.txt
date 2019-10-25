@@ -1,0 +1,8 @@
+1.医疗废物智能化追溯系统，
+2.使用IBM Rational Rose画流程图、状态图，
+3.基本业务管理，基本模块功能实现，spring查询组件。
+4.框架：SSM，struts2、spring、mybatis
+5.我在该项目中负责基本功能模块实现，利用ssm框架，实现了医疗废物种类，阈值，预警时间，处置方式的业务管理功能，利用相关jar包，显示数据库的数据到页面上，会使用tiles结合struts2标签，跳转页面；熟悉junit单元测试；
+6.能够使用Echarts图显示数后台数据；二维码，下拉框，医废追溯流程页面编写。熟练使用HBuilder X编写h5页面。熟悉uni-app，mui，bootstrap，vue等前端框架。
+7.用vue仿照视频做过一个手机商城的项目。
+8.会使用svn，git检项目，熟悉git基本命令。

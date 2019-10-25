@@ -1,0 +1,11 @@
+1.从网上找个生成二维码的工具包。
+2.在runtimecfg中的system-config.properties里配置二维码存放路径
+system.upload.dir=/upload
+system.hospital.qrcode.dir=/upload/images/qrcode/hospital/
+3.利用系统自带方法：获取上传路径
+String uploadUrlTemp=(String) this.getSystemConfig("system.hospital.qrcode.dir","/upload/images/qrcode/hospital/");
+3.在action里“创建文件夹”，添加路径，其中获取项目根路径从网上找的相关方法。
+4.在service层里进一步实现添加方法，拼接二维码名称，生成二维码，
+QRcode.generateQrCode(qrcFile, qrCodeContent, departmentName);
+5.更新页面。
+hospitalDepartmentDao.update("updateQrCode", addHospitalDepartment);

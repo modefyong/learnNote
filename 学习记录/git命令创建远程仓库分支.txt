@@ -1,0 +1,4 @@
+git 创建远程新分支
+查看所有分支：git branch -a
+创建本地test01分支：git checkout -b test01
+把本地test01分支推送到远程： git push --set-upstream origin test01
