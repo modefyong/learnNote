@@ -1,0 +1,9 @@
+1.ctrl + alt + f  图片自适应屏幕；
+2.ctrl + r 标尺
+3.ctrl + shift + c 预合成
+4.ctrl + y 新建图层
+
+
+AE案例：
+1.字母的进出；
+2.魔方；

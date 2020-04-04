@@ -1,0 +1,106 @@
+﻿JS练习，练习大纲如下：
+
+写一下反思总结。
+1.99乘法表.html    ECMAScript部分
+忘记document.write写入页面。了解到了另一种方法——使用table标签。
+2.for循环为文本框赋值和取值.html    DOM部分
+不会，直接百度的。重写一遍！
+join() 方法用于把数组中的所有元素放入一个字符串。在字符串中，元素是通过指定的分隔符进行分隔的。
+
+3.tab栏切换（css）.html    DOM部分
+不会，百度。
+知识点：font 简写属性在一个声明中设置所有字体属性。
+可以按顺序设置如下属性：
+font-style
+font-variant
+font-weight
+font-size/line-height
+font-family
+
+4.tab栏切换（js）.html    DOM部分
+做出大部分来了，还差关键一步：保存索引值。眼高手低！多练习。
+5.tab栏切换（复杂版）.html    DOM部分 
+多个选项卡，函数封装思想。
+6.tab栏切换（精简版）.html    DOM部分 
+代码优化后的版本。
+7.事件添加的兼容写法.html    DOM部分
+兼容IE：attachEvent，谷歌：addEventListener。的添加事件的方法。
+8.事件监听原理.html    DOM部分
+关于on + ‘click’的事件监听。
+9.事件解绑的兼容写法.html    DOM部分 
+removeEventListener，detachEvent方法。
+10.全选反选-html.html    DOM部分
+逻辑思路要理清。
+11.冒泡排序（中级版）.html    ECMAScript部分
+
+12.冒泡排序（最终版）.html    ECMAScript部分
+
+13.冒泡排序（简单版）.html    ECMAScript部分
+双重for循环，位置对调。
+14.创建列表高亮显示美女.html    DOM部分
+
+15.判断字符串以某个字符串为开头.html    DOM部分
+
+16.动画封装(简单版).html    DOM部分
+
+17.在线用户.html    DOM部分
+
+18.字符串案例.html    DOM部分
+
+19.打印正方形和三角形.html    ECMAScript部分
+
+20.改变盒子的大小和透明度.html    DOM部分
+
+21.数组大案例.html    ECMAScript部分
+
+22.数组的API方法遍历.html    ECMAScript部分
+
+23.数组练习.html    ECMAScript部分
+
+24.文本框获取焦点.html    DOM部分
+
+25.文本框获取焦点高亮显示.html    DOM部分
+
+26.显示和隐藏盒子.html    DOM部分
+
+27.模拟日历.html    DOM部分
+
+28.模拟百度搜索.html    DOM部分
+
+29.水果排序（终极版）.html    DOM部分
+
+30.清空数组.html    ECMAScript部分
+
+31.点亮盒子.html    DOM部分
+
+32.用户注册高亮显示.html    DOM部分
+
+33.百度皮肤.html    DOM部分
+
+34.祝愿墙.html    DOM部分
+
+35.苹果发布会倒计时.html    DOM部分
+
+36.获取节点元素的封装（最终版版）.html    DOM部分
+
+37.获取节点元素的封装（简单版）.html    DOM部分
+
+38.菜单练习(利用封装方法).html    DOM部分
+
+39.设置水果.html    DOM部分
+
+40.输出某年某月某日的天数.html    ECMAScript部分
+
+41.输出某年某月某日的天数（精简）.html    ECMAScript部分
+
+42.返回值练习.html    ECMAScript部分
+
+43.选择水果.html    DOM部分
+
+44.选择水果（封装版）.html    DOM部分
+
+45.选择水果（简单版）.html    DOM部分
+
+46.隔行变色.html    DOM部分
+
+47.高级隔行变色.html    DOM部分

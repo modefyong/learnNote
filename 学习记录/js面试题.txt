@@ -1,0 +1,265 @@
+﻿面试的时候面试官更看重的是你在项目中承担了什么，和主要负责了什么。遇到了什么问题和解决方案。
+* 陌生知识点
+（百度的回答有的不太准确，待修正······）
+01. 如何适配手机浏览器和web页面。(这个主要考虑flex布局和rem布局)
+①、媒体查询。使用media中的screen可以根据屏幕大小调整样式（不推荐）。
+②、flex布局和rem布局。flex为css3新属性，适配方面不熟悉。了解rem是适用于手机端的像素单位。
+百度：方法一：设置width=device-width 也就是将layout viewport（布局视口）的宽度设置 为ideal viewport（理想视口）的宽度。
+网页缩放比例为100%时，一个CSS像素就对应一个 dip（设备逻辑像素）
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+方法二：rem布局：
+1rem 等于设计稿上的100px；rem是相对与根元素做计算。
+方法三：flex布局：
+vm/vh:CSS单位
+vw(view-width), vh(view-height) 这两个单位是CSS新增的单位，表示视区宽度/高度，视区总宽度为100vw, 总高度为100vh。
+视区指浏览器内部的可视区域大小：window.innerWidth/Height
+
+02. cookie、sessionStorage和localStorage的异同。
+cookie存储用户访问信息，sessionStorage见名知意，存储在session中的数据库，session是什么？localStorage，本地存储库，概念较模糊。
+
+百度：
+浏览器的缓存机制提供了可以将用户数据存储在客户端上的方式，可以利用cookie,session等跟服务端进行数据交互。
+1.cookie和session
+cookie和session都是用来跟踪浏览器用户身份的会话方式。
+区别：保持状态：cookie保存在浏览器端，session保存在服务器端。
+2.sessionStorage：将数据保存在session对象中。所谓session，是指用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。session对象可以用来保存在这段时间内所要求保存的任何数据。
+3.localStorage：将数据保存在客户端本地的硬件设备(通常指硬盘，也可以是其他硬件设备)中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
+这两者的区别在于，sessionStorage为临时保存，而localStorage为永久保存。
+
+03. 清除浮动的方法?overflow：hidden清除浮动的原理是什么。
+法一：利用伪元素。ul::after{ content: ' ';display: block;clear: both; }
+法二：flex布局；
+法三：overflow：hidden。
+原理：（简书）
+BFC（Block Formatting Context），块级格式化上下文，它规定了内部的块级元素的布局方式，默认情况下只有根元素（即body）一个块级上下文。
+1、BFC布局规则：
+①属于同一个BFC的两个相邻的块级元素会发生margin合并，不属于同一个BFC的两个相邻的块级元素不会发生margin合并；
+②BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素；外面的元素也不会影响到容器里面的子元素；计算BFC的高度时，浮动元素也参与计算。
+
+链接网址：（博客园）https://www.cnblogs.com/nxl0908/p/7245460.html
+04. 前端路由实现的原理是什么？（不懂！）
+前端路由，顾名思义就是一个前端不同页面的状态管理器,可以不向后台发送请求而直接通过前端技术实现多个页面的效果。angularjs中的ui-router,vue中的vue-router,以及react的react-router均是对这种功能的具体实现。
+
+链接网址：https://www.cnblogs.com/dashnowords/p/9671213.html
+
+05. position有哪几种属性，它们的区别是什么？
+absolute,绝对定位，对整个document而言
+relative,相对定位，相对父级容器的定位
+fixed,相对于浏览器的固定定位
+static，默认定位
+
+（百度）
+1. position: relative;相对定位
+1> 不影响元素本身特性（无论区块元素还是内联元素会保留其原本特性）
+2> 不会使元素脱离文档流（元素原本位置会被保留，即改变位置也不会占用新位置）
+3> 没有定位偏移量时对元素无影响（相对于自身原本位置进行偏移）
+4>提升层级（用z-index样式的值可以改变一个定位元素的层级关系，从而改变元素的覆盖关系，值越大越在上面，z-index只能在position属性值为relative或absolute或fixed的元素上有效。）  （两个都为定位元素，后面的会覆盖前面的定位）
+2. position: absolute;绝对定位
+1> 使元素完全脱离文档流（在文档流中不再占位）
+2> 使内联元素在设置宽高的时候支持宽高（改变内联元素的特性）
+3> 使区块元素在未设置宽度时由内容撑开宽度（改变区块元素的特性）
+4> 相对于最近一个有定位的父元素偏移（若其父元素没有定位则逐层上找，直到document——页面文档对象）
+5> 相对定位一般配合绝对定位使用（将父元素设置相对定位，使其相对于父元素偏移）
+6> 提升层级（同相对定位）
+3. position: fixed;固定定位
+  fixed生成固定定位的元素，相对于浏览器窗口进行定位。
+4. position:static：默认值
+默认布局。元素出现在正常的流中
+
+06. 说一下强制缓存和协商缓存。(需要学习浏览器缓存，HTTP方面的知识。)（百度）前端性能优化绝逼是一个工程问题！
+参考网址：https://www.cnblogs.com/wonyun/p/5524617.html
+强制缓存（本地缓存）直接从缓存中获取资源而不经过服务器。
+
+07. cookie如何防止被恶意读取
+https://www.cnblogs.com/walls/archive/2018/05/22/9070166.html
+
+08. 什么是节流和防抖
+所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+所谓节流，就是指连续触发事件但是在N秒中只执行一次函数
+https://www.jianshu.com/p/b5fcb9a04b17
+
+09. 说几种div水平和垂直居中的方式
+1.margin : 0 auto;text-align:center;line-height:center;(文字水平垂直居中)。
+2.display:flex;
+justify-content: center;
+align-items: center;
+3.绝对定位。确定了当前div的宽度，margin值为当前div宽度一半的负值
+4.绝对定位方法：绝对定位下top left right bottom 都设置0。
+
+最新博客：https://www.cnblogs.com/a-cat/p/9019184.html
+
+10. 如果浏览器禁用cookie，怎么办?（不懂）未搜到具体答案。
+URL重写。
+
+11. 如果前端有一个请求需要非常短的时间请求后端的接口，怎么可以知道后端接口返回的数据的先后顺序。（百度未查询到答案）
+作者答：与后端协商一个请求参数
+
+12. 如何预防xss和csrf攻击。
+在项目中如何解决XSS的攻击？
+1.首先项目导入XSSStringEncoder.java，这个里面主要就是把传入字符串的特殊字符进行html转码，例如&gt; &lt; ) ( " ' % ; &amp; +，这些特殊字符很有可能就是被注入的代码。
+2.对每一个代码传入的字符串调用这里面的encodeXSSString进行转码，然后把转码后的字符串返回回来
+网址：https://www.cnblogs.com/lxwphp/p/8064815.html
+13. polify一个map函数使其可以以向下兼容。（未搜到答案。）
+
+
+14. 说一下es6常用的方法。它们有什么新的特性。
+简书：https://www.jianshu.com/p/e9efb386863a
+
+15. 一个字符串如何去掉字符串中的空格
+str.replace(/\s/g,"");
+
+16. 一个字符串如何去重
+indexOf这个方法本质上也是通过遍历字符串的形式查找某个字符在字符串中第一次出现的位置，如果没有在字符串中找到，则返回-1。
+function removeRepeatStr(str){
+    var newStr = '';
+    var len = str.length;
+    for(var i=0; i<len; i++){
+        if(newStr.indexOf(str[i])==-1){
+            newStr = newStr + str[i];
+        }
+    }
+    return newStr;
+
+CSDN网址：https://blog.csdn.net/charles_tian/article/details/79938010
+17. 说一下二分法查找。它的时间度是多少（百度百科）
+算法：二分法查找适用于数据量较大时，但是数据需要先排好顺序。主要思想是：（设查找的数组区间为array[low, high]）
+（1）确定该区间的中间位置K（2）将查找的值T与array[k]比较。若相等，查找成功返回此位置；否则确定新的查找区域，继续二分查找。区域确定如下：a.array[k]>T 由数组的有序性可知array[k,k+1,……,high]>T;故新的区间为array[low,……，K-1]b.array[k]<T 类似上面查找区间为array[k+1,……，high]。每一次查找与中间值比较，可以确定是否查找成功，不成功当前查找区间将缩小一半，递归查找即可。时间复杂度为:O(log2n)。
+
+18. 说一下css3中的animation和transform属性如何使用
+CSDN：https://blog.csdn.net/Creabine/article/details/51329761
+
+19. 标准盒子和怪异盒子
+怪异模式下，一个块的宽度 = width+margin(外边距) （即怪异模式下，width包含了border以及padding）。
+简书：https://www.jianshu.com/p/99588abb1097
+
+20. 说一下常用的ajax请求状态码
+博客园：https://www.cnblogs.com/luoguixin/p/6249566.html
+
+21. 说一下vue框架和angular框架之间的异同 (因为本人技术栈是vue和angularJs)
+简书：https://www.jianshu.com/p/a7e47abd3e79
+22. vue的nextTick这个方法有什么用
+Vue.nextTick(callback)，当数据发生变化，更新后执行回调。
+Vue.$nextTick(callback)，当dom发生变化，更新后执行的回调。
+简书：https://www.jianshu.com/p/4f84bc054908
+23. 微任务和宏任务
+概念  
+1. 宏任务：当前调用栈中执行的代码成为宏任务。（主代码快，定时器等等）。 
+
+2.微任务： 当前（此次事件循环中）宏任务执行完，在下一个宏任务开始之前需要执行的任务,可以理解为回调事件。（promise.then，proness.nextTick等等）。 3. 宏任务中的事件放在callback queue中，由事件触发线程维护；微任务的事件放在微任务队列中，由js引擎线程维护。
+https://www.cnblogs.com/mp-0518/p/11235957.html
+24. 说一下什么是栈、什么是堆、什么是队列。
+队列是先进先出，有出口和入口，先进去可以先出来。
+栈就像一个箱子，后放上去的，可以先出来
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。{堆是指程序运行是申请的动态内存，而栈只是指一种使用堆的方法(即先进后出)。
+栈是先进后出的，但是于堆而言却没有这个特性，两者都是存放临时数据的地方。 对于堆，我们可以随心所欲的进行增加变量和删除变量，不要遵循什么次序，只要你喜欢。
+堆（Heap)是应用程序在运行的时候请求操作系统分配给自己内存。
+
+25. vue生命周期
+简书：https://www.jianshu.com/p/672e967e201c
+
+26. 简述一下vue的工作流程是什么样的（从vue初始化到页面渲染完成大致都经历了哪些过程）
+https://axiu.me/coding/vue-init-and-render/?replytocom=84963
+
+27. 从输入网址到页面展示都经历了些什么
+https://blog.csdn.net/qq_24147051/article/details/81115806
+
+28. 说一下什么是重绘和重排
+https://blog.csdn.net/sinat_37328421/article/details/54575638
+
+29. vue的mixin和component什么区别（*）
+  Mixin对于封装一小段想要复用的代码来讲是有用的。
+博客园：https://www.cnblogs.com/riona/p/10030143.html
+
+30. vuex为什么在action中可以异步提交数据再mutation中不可以异步提交数据（*）
+https://blog.csdn.net/dkr380205984/article/details/82347910
+
+
+31. 说一下slot-scope和scope的区别（*）
+https://blog.csdn.net/qq_28929589/article/details/82896364
+
+32. vue是如何实现双向数据绑定的（重点）
+https://www.jianshu.com/p/c4dfc5806178
+
+33. 说一下keep-alive内置组件
+keep-alive是Vue.js的一个内置组件。它能够不活动的组件实例保存在内存中，而不是直接将其销毁，它是一个抽象组件，不会被渲染到真实DOM中，也不会出现在父组件链中。
+
+34. 在create生命周期中可以拿到data中的数据吗
+不能。还没有渲染到页面上。
+生命周期分为八个部分：创建前，创建后，挂载前，挂载后，更新前，更新后，销毁前，销毁后。
+beforecreated：el 和 data 并未初始化 
+created:完成了 data 数据的初始化，el没有
+beforeMount：完成了 el 和 data 初始化 
+mounted ：完成挂载。
+35. 说一下路由守卫。再beforeRouteEnter阶段中可以拿到vue实例吗？如果不能怎么办？
+在渲染该组件的对应路由被确认前调用，用法和参数与beforeEach类似，next需要被主动调用
+注意：
+1.此时组件实例还未被创建，不能访问this
+2.可以通过传一个回调给 next来访问组件实例。在导航被确认的时候执行回调，并且把组件实例作为回调方法的参数
+3.可以在这个守卫中请求服务端获取数据，当成功获取并能进入路由时，调用next并在回调中通过 vm访问组件实例进行赋值等操作
+4.beforeRouteEnter触发在导航确认、组件实例创建之前：beforeCreate之前；而next中函数的调用在mounted之后：为了确保能对组件实例的完整访问。
+https://www.jianshu.com/p/7ff8f31afebe
+
+36. 说一下vue组件间通讯的几种方式（重点）
+https://www.jianshu.com/p/c015141441f4
+
+37. 说一下webpack和gulp的异同
+gulp强调的是前端开发的工作流程，我们可以通过配置一系列的task，定义task处理的事务（例如文件压缩合并、雪碧图、启动server、版本控制等），然后定义执行顺序，来让gulp执行这些task，从而构建项目的整个前端开发流程。
+webpack是一个前端模块化方案，更侧重模块打包，我们可以把开发中的所有资源（图片、js文件、css文件等）都看成模块，通过loader（加载器）和plugins（插件）对资源进行处理，打包成符合生产环境部署的前端资源。
+https://www.cnblogs.com/lovesong/p/6413546.html
+38. 说一下webpack打包的原理
+把所有依赖打包成一个bundle.js文件，通过代码分割成单元片段并按需加载。
+https://blog.csdn.net/weixin_44707104/article/details/89914800
+
+39. AMD、CMD、commonjs和es6的module有什么异同
+https://blog.csdn.net/Zhixjs/article/details/91492304
+
+40. 说一下loader和plugin的区别
+
+https://blog.csdn.net/csm0912/article/details/88795369
+41. 说一下你再项目中如何对webpack进行优化的
+https://blog.csdn.net/github_39506988/article/details/91044287
+
+42. webpack可以配置两个入口文件吗？怎么配置（webpack多入口文件页面打包配置）
+可以。https://blog.csdn.net/deeplies/article/details/79005507
+
+43. 说一下跨域的几种方式
+1. 通过jsonp跨域
+2. document.domain+iframe跨域
+3. nginx代理跨域
+4. nodejs中间件代理跨域
+5. 后端在头部信息里面设置安全域名
+
+http://www.imooc.com/article/40074
+
+44. 说一下iframe的优劣
+https://www.cnblogs.com/Heaven1020/p/5366453.html
+
+45. 手写一个冒泡排序（javascript）
+https://www.cnblogs.com/wonderF/p/5721984.html
+java：https://blog.csdn.net/IT_lukaifang/article/details/82874760
+
+46. $.entend和$.fn.entend的异同.
+两者的主要功能作用不同：
+　　jQuery.extend(object); 为扩展jQuery类本身，为自身添加新的方法。
+　　jQuery.fn.extend(object);给jQuery对象添加方法。
+https://blog.csdn.net/weixin_34219944/article/details/93347706
+47. 样式选择有哪些，他们的权重排序是什么样的
+https://blog.csdn.net/xiaobuhome/article/details/53032433
+48.JavaScript运行机制
+https://juejin.im/post/59e85eebf265da430d571f89
+49.Vue 是如何实现数据双向绑定的？（看不懂啊~）
+Vue 内部通过 Object.defineProperty方法属性拦截的方式，把 data 对象里每个数据的读写转化成 getter/setter，当数据变化时通知视图更新。
+掘金：https://juejin.im/post/5d421bcf6fb9a06af23853f1
+
+vue面试题：
+https://www.jianshu.com/p/b1564296a78b
+
+50.浏览器输入URL到返回页面的全过程。
+1.根据域名，进行DNS域名解析。
+2.拿到解析的IP地址，建立TCP连接。
+3.向IP地址，发送HTTP请求。
+4.服务器处理请求。
+5.返回响应结果。
+6.关闭TCP连接。
+7.浏览器解析HTML；
+8.浏览器布局渲染。

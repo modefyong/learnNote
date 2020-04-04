@@ -1,0 +1,13 @@
+[
+    {
+        "auth": "dzlshj2322323",
+        "host": "192.168.2.143",
+        "keys_pattern": "*",
+        "name": "redisConnection",
+        "namespace_separator": ":",
+        "port": 6379,
+        "ssh_port": 22,
+        "timeout_connect": 60000,
+        "timeout_execute": 60000
+    }
+]

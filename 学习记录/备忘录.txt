@@ -1,8 +1,79 @@
-账号：shengchanyiyuan
+线上医院账号：shengchanyiyuan
 密码：125698
 
 测试服务器
-192.168.2.105
+ip地址：192.168.2.105
 密码：1
 
 戴尔服务电话：05928182475
+
+医废平台线上管理员账号：
+dzlsBizAdmin 
+密码：
+dzls_tec!@#
+
+
+百度推广：
+用户名：dzlshj
+Dzlshj123456
+
+wordpress后台 （服务器）
+用户名：superadmin
+密码：123456
+
+虚拟主机：115.28.186.224
+
+主机管理控制台地址：
+https://cp.aliyun.com  
+用户名：qyu7308070001
+管理员密码：dzLS13tec!@#
+
+FTP登录主机地址：
+qyu7308070001.my3w.com
+
+用户名：qyu7308070001
+FTP密码：dzls13TEc!@#
+
+MySQL数据库连接地址：
+qdm722898268.my3w.com
+用户名：qdm722898268
+MYSQL数据密码：DzLshj23223
+
+数据库名称： qdm722898268_db
+
+数据库类型： MySQL
+
+数据库连接地址： qdm722898268.my3w.com
+
+数据库用户名： qdm722898268
+
+数据库管理密码： DzLshj23223
+
+原来网址：
+http://qyu7308070001.my3w.com
+
+最新网址：
+https://ruanjian.dzlshj.com/
+
+MongoDB 安装位置：
+C:\Program Files\MongoDB\Server\4.2\data\
+
+gitlab
+账号：maofengyong
+密码：12345678
+
+svn 
+账号：MaoFengyong
+密码：123
+
+
+汉本环保wordpress后台：
+
+www.dzhbhb.com/wp-admin/
+网站后台账号 50553613
+网站后台密码 sKKF9Yk%c#7zF#6DwG
+
+
+
+
+

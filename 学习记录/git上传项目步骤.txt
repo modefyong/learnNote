@@ -1,0 +1,25 @@
+开始上传项目。
+1.在本地项目文件夹打开git Bash工具；
+2. 初始化git。git init	
+3.添加到本地库. git add .
+出现警告：LF will be replaced by CRLF in .gitignore.
+原因：路径中存在 / 的符号转义问题，LF将被转换为CRLF。
+解决办法：禁止git的自动转换。git config --global core.autocrlf false
+4.提交到远程仓库。git commit -m "注释"
+5.关联远程仓库地址。git remote add origin https://github.com/modefyong/20200113_ReactAdmin.git
+6.推送到主分支。git push origin master
+
+7.根据主分支建立本地分支。git checkout -b dev  
+8.将本地分支推送到远程仓库。git push origin dev
+结束上传项目。
+
+
+从远程仓库下载项目注意：
+git pull origin dev 从远程仓库dev分支拉取到本地dev，就和svn中的update一样，更新仓库里的内容到本地。
+
+
+
+
+
+
+
